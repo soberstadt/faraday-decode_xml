@@ -32,7 +32,7 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = '>= 2.5', '< 4'
 
-  spec.add_runtime_dependency 'faraday', '~> 2.0'
+  spec.add_runtime_dependency 'faraday', '< 3.0'
   spec.add_runtime_dependency 'multi_xml', '< 1.0'
 
   spec.add_development_dependency 'bundler', '~> 2.0'

@@ -31,7 +31,9 @@ gem install faraday-decode_xml
 ```ruby
 require 'faraday/decode_xml'
 
-# TODO
+Faraday.new do |faraday|
+  faraday.response :xml
+end
 ```
 
 ## Development

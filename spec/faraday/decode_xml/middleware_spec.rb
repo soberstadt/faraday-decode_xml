@@ -6,10 +6,11 @@ RSpec.describe Faraday::DecodeXML::Middleware do
       faraday.response :xml
 
       faraday.adapter :test do |stub|
-        stub.get('ok') { [200, { 'Content-Type' => 'application/xml; character-set: utf-8' }, body] }
+        stub.get('ok') { [200, { 'Content-Type' => "#{content_type}; character-set: utf-8" }, body] }
       end
     end
   end
+  let(:content_type) { 'application/xml' }
   let(:body) do
     '<root><foo>bar</foo></root>'
   end
@@ -25,6 +26,14 @@ RSpec.describe Faraday::DecodeXML::Middleware do
 
     it 'raises error' do
       expect { conn.get('/ok').body }.to raise_error(Faraday::ParsingError)
+    end
+  end
+
+  context 'when content type is not XML' do
+    let(:content_type) { 'text/plain' }
+
+    it 'does not parse body' do
+      expect(conn.get('/ok').body).to eq body
     end
   end
 end

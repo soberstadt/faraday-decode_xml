@@ -6,6 +6,11 @@ module Faraday
   module DecodeXML
     # Faraday middleware for decoding XML requests.
     class Middleware < Faraday::Middleware
+      def initialize(app = nil, content_type: /\bxml$/)
+        super(app)
+        @content_types = Array(content_type)
+      end
+
       # @param env [Faraday::Env] the environment of the response being processed.
       def on_complete(env)
         process_response(env) if process_response_type?(response_type(env)) && parse_response?(env)
@@ -32,7 +37,9 @@ module Faraday
       end
 
       def process_response_type?(type)
-        type == 'application/xml'
+        @content_types.empty? || @content_types.any? do |pattern|
+          pattern.is_a?(Regexp) ? type.match?(pattern) : type == pattern
+        end
       end
 
       def parse_response?(env)

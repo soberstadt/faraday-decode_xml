@@ -1,6 +1,6 @@
 # Faraday Decode XML
 
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/soberstadt/faraday-decode_xml/ci)](https://github.com/soberstadt/faraday-decode_xml/actions?query=branch%3Amain)
+[![GitHub Workflow Status](https://github.com/soberstadt/faraday-decode_xml/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/soberstadt/faraday-decode_xml/actions?query=branch%3Amain)
 [![Gem](https://img.shields.io/gem/v/faraday-decode_xml.svg?style=flat-square)](https://rubygems.org/gems/faraday-decode_xml)
 [![License](https://img.shields.io/github/license/soberstadt/faraday-decode_xml.svg?style=flat-square)](LICENSE.md)
 

@@ -45,6 +45,8 @@ To install this gem onto your local machine, run `rake build`.
 To release a new version, make a commit with a message such as "Bumped to 0.0.2" and then run `rake release`.
 See how it works [here](https://bundler.io/guides/creating_gem.html#releasing-the-gem).
 
+To run prettier, run `rake prettier`
+
 ## Contributing
 
 Bug reports and pull requests are welcome on [GitHub](https://github.com/soberstadt/faraday-decode_xml).

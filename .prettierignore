@@ -1,0 +1,2 @@
+# Ignore vendor files for github actions
+vendor/*

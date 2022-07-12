@@ -22,6 +22,10 @@ Metrics/BlockLength:
   Exclude:
     - spec/**/*.rb
 
+Metrics/MethodLength:
+  Exclude:
+    - Rakefile
+
 Layout/EmptyLinesAroundAttributeAccessor: # (0.83)
   Enabled: true
 
@@ -33,8 +37,7 @@ Layout/SpaceAroundMethodCallOperator:
   Enabled: true
 
 Style/Documentation:
-  Exclude:
-    - "spec/**/*"
+  Enabled: false
 
 Packaging/RequireRelativeHardcodingLib:
   Exclude:

@@ -17,7 +17,7 @@ jobs:
       - name: Run RuboCop
         run: bundle exec rubocop
       - name: Run Prettier
-        run: bundle exec rbprettier --check '**/*'
+        run: bundle exec rake prettier_check
 
   rspec:
     runs-on: ubuntu-latest

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require_relative 'decode_xml/middleware'
-require_relative 'decode_xml/version'
+require_relative "decode_xml/middleware"
+require_relative "decode_xml/version"
 
 module Faraday
   # This will be your middleware main module, though the actual middleware implementation will go

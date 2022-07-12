@@ -3,6 +3,9 @@ require:
   - rubocop-performance
   - rubocop-rspec
 
+inherit_gem:
+  prettier: rubocop.yml
+
 inherit_mode:
   merge:
     - Include
@@ -31,7 +34,7 @@ Layout/SpaceAroundMethodCallOperator:
 
 Style/Documentation:
   Exclude:
-    - 'spec/**/*'
+    - "spec/**/*"
 
 Packaging/RequireRelativeHardcodingLib:
   Exclude:

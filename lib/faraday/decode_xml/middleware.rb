@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'multi_xml'
+require "multi_xml"
 
 module Faraday
   module DecodeXML
@@ -33,13 +33,12 @@ module Faraday
       end
 
       def response_type(env)
-        env.response_headers['Content-Type'].to_s.split(';', 2).first
+        env.response_headers["Content-Type"].to_s.split(";", 2).first
       end
 
       def process_response_type?(type)
-        @content_types.empty? || @content_types.any? do |pattern|
-          pattern.is_a?(Regexp) ? type.match?(pattern) : type == pattern
-        end
+        @content_types.empty? ||
+          @content_types.any? { |pattern| pattern.is_a?(Regexp) ? type.match?(pattern) : type == pattern }
       end
 
       def parse_response?(env)

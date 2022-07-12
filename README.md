@@ -11,7 +11,7 @@ Faraday middleware for decoding XML requests.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'faraday-decode_xml'
+gem "faraday-decode_xml"
 ```
 
 And then execute:
@@ -29,11 +29,9 @@ gem install faraday-decode_xml
 ## Usage
 
 ```ruby
-require 'faraday/decode_xml'
+require "faraday/decode_xml"
 
-Faraday.new do |faraday|
-  faraday.response :xml
-end
+Faraday.new { |faraday| faraday.response :xml }
 ```
 
 ## Development

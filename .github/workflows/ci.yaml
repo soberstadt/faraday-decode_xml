@@ -16,6 +16,8 @@ jobs:
           bundler-cache: true
       - name: Run RuboCop
         run: bundle exec rubocop
+      - name: Run Prettier
+        run: bundle exec rbprettier --check '**/*'
 
   rspec:
     runs-on: ubuntu-latest

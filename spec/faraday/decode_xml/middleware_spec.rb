@@ -36,4 +36,16 @@ RSpec.describe Faraday::DecodeXML::Middleware do
       expect(conn.get('/ok').body).to eq body
     end
   end
+
+  context 'when content_type option is supplied' do
+    let(:content_type) { 'application/non-standard-xml-content-type' }
+
+    before { conn.response :xml, content_type: /xml-content-type/ }
+
+    it 'parses body into hash' do
+      me = conn.get('/ok').body
+
+      expect(me).to eq 'root' => { 'foo' => 'bar' }
+    end
+  end
 end

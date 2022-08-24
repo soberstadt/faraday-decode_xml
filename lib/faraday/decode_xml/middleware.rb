@@ -33,7 +33,7 @@ module Faraday
       end
 
       def response_type(env)
-        env.response_headers["Content-Type"].to_s.split(";", 2).first
+        env.response_headers["Content-Type"].to_s.split(";", 2).first.to_s
       end
 
       def process_response_type?(type)

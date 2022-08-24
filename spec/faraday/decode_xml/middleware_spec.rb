@@ -46,4 +46,20 @@ RSpec.describe Faraday::DecodeXML::Middleware do
       expect(me).to eq "root" => { "foo" => "bar" }
     end
   end
+
+  context "when response does not have a Content-Type header" do
+    let(:conn) do
+      Faraday.new do |faraday|
+        faraday.response :xml
+
+        faraday.adapter :test do |stub|
+          stub.get("ok") { [200, {}, body] }
+        end
+      end
+    end
+
+    it "does not parse body" do
+      expect(conn.get("/ok").body).to eq body
+    end
+  end
 end
